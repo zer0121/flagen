@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="icon" href="https://flagcdn.com/w160/ar.png" type="image/x-icon">
+    <meta name="keywords" content="flagen flag game wordle worldle">
+    <link rel="canonical" href="https://flagen.glitch.me/" />
+    <meta
+        name="description"
+        content="Basic flag game :P"
+    />
+    <script src="js_html.js"></script>
+    <style>
+        body{
+            font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            align-self: center;
+        }
+        #navigator{
+            text-decoration:none;
+            color: whitesmoke;
+        }
+        #navigator:hover{
+            text-decoration:none;
+            color: greenyellow;
+        }
+        section{
+            width: 75%;
+            height: 60%;
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        #play{
+            border: none;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: rgba(0, 128, 0, 0.800);
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+            width: 25%;
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        #play:hover{
+            background-color: rgba(0, 128, 0, 0.700);
+        }
+        h2{
+            position: absolute;
+            top: 28%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 15%;
+        }
+        h2:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+        #text1{
+            position: absolute;
+            top: 63%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 90%;
+        }
+        #text1:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+    </style>
+    <title>FLAGEN</title>
+</head>
+<body style="background-color: rgb(38, 38, 55);" text="white">
+    <div style="background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;font-size: 23px;border-radius: 12px;">
+        <b style="font-size: 40px;">
+            FLAG<span style="color: greenyellow;">E</span>N
+        </b>
+        
+        <br>
+    
+        <nav>
+            <a id="navigator" href="index.html"><b>HOME</b></a> |
+            <a id="navigator" href="challenges.html"><b>CHALLENGES</b></a> |
+            <a id="navigator" href="contact.html"><b>CONTACT</b></a>
+        </nav>
+    </div>
+    <br>
+    <section id="section" style="background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;padding: 20px;margin:5px;border-radius: 12px;" id="howto" >
+        <button id="play" onclick="play()"><b>Play FLAG<span style="color:greenyellow">E</span>N</b></button>
+        <h2 id="h2">How to play:</h2>
+        <div id="text1">
+            <p>When you click <b>Play FLAG<span style="color:greenyellow;">E</span>N</b> you will see a <b>score counter</b>, <b>your high score</b>, <b>a timer</b>, and of course <b>flag of a random country</b></p>
+            <p>The timer starts after you guess the first flag <u>correctly</u>. Every correctly guessed flag gives <b>+2 seconds</b> to the timer.</p>
+            <p>There is <b>no penalty</b> for incorrect guesses.</p>
+            <p>To guess you need to write the name of a country in the input.</p>
+        </div>    
+    </section>
+
+    <script>
+        function play() {
+            path = location.pathname
+            if (path.endsWith("index.html")) {
+                path=location.pathname.replace(/index/g, "game")
+            }
+            location.href = path
+        }
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "windows-phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "ios";
+            }
+
+            return "unknown";
+        }
+        if (getMobileOperatingSystem() == "unknown") {
+            
+        }else{
+            document.getElementById('play').style = 'top: 10%; width: 45%;'
+            document.getElementById('h2').style = 'width: 45%; top: 25%;'
+            document.getElementById('text1').style = 'top: 68%;'
+            document.getElementById('section').style = 'background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;padding: 20px;margin:5px;border-radius: 12px;height: 80%;top: 67%;'
+        }
+    </script>
+</body>
+</html>

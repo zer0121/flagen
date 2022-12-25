@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="icon" href="https://flagcdn.com/w160/ar.png" type="image/x-icon">
+    <meta name="keywords" content="flagen flag game wordle worldle">
+    <link rel="canonical" href="https://flagen.glitch.me/" />
+    <meta
+        name="description"
+        content="Basic flag game :P"
+    />
+    <script src="js_html.js"></script>
+    <style>
+        body{
+            font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            align-self: center;
+        }
+        #navigator{
+            text-decoration:none;
+            color: whitesmoke;
+        }
+        #navigator:hover{
+            text-decoration:none;
+            color: greenyellow;
+        }
+        section{
+            width: 75%;
+            height: 70%;
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        #play{
+            border: none;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: rgba(0, 128, 0, 0.800);
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+            width: 25%;
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+        #play:hover{
+            background-color: rgba(0, 128, 0, 0.700);
+        }
+        h2{
+            position: absolute;
+            top: 28%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 15%;
+        }
+        h2:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+        #text1{
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 90%;
+        }
+        #text1:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+        #playinvert{
+            border: none;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: rgba(172, 255, 47, 0.800);
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+        }
+        #playinvert:hover{
+            background-color: rgba(172, 255, 47, 0.900);
+        }
+        /* Invert CHALLENGE */
+        #invert{
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 90%;
+        }
+        #invert:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+        #more{
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(53, 53, 77, 0.750);
+            border-radius: 12px;
+            padding: 7px;
+            width: 90%;
+        }
+        #more:hover{
+            background-color: rgba(53, 53, 77, 0.850);
+        }
+    </style>
+    <title>FLAGEN</title>
+</head>
+<body style="background-color: rgb(38, 38, 55);" text="white">
+    <div style="background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;font-size: 23px;border-radius: 12px;">
+        <b style="font-size: 40px;">
+            FLAG<span style="color: greenyellow;">E</span>N
+        </b>
+        
+        <br>
+    
+        <nav>
+            <a id="navigator" href="index.html"><b>HOME</b></a> |
+            <a id="navigator" href="challenges.html"><b>CHALLENGES</b></a> |
+            <a id="navigator" href="contact.html"><b>CONTACT</b></a>
+        </nav>
+    </div>
+    <br>
+    <section id="section" style="background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;padding: 20px;margin:5px;border-radius: 12px;" id="howto" >
+        <div id="text1">
+            <p style="font-size: 35px;"><b>FLAG<span style="color:greenyellow;">E</span>N</b> CHALLENGES</p>
+        </div>
+        <div id="invert">
+            <p style="font-size: 25px;"><b><span style="color:greenyellow;">IN</span>VERT CHALLENGE</b></p>
+            <p style="font-size: 15px;"><b>Colors of every flag are inverted, can you guess them all? 🤔</b></p>
+            <p style="font-size: 15px;"><b><button id="playinvert" onclick="location.href=location.href.replace(/challenges/g, 'challenges/challenge_invert')"><b>Play now!</b></button></b></p>
+        </div>
+        <div id="more">
+            <p style="font-size: 25px;"><b>MORE COMING <span style="color:greenyellow;">SOON</span>...</b></p>
+            <p style="font-size: 15px;"><b>Available in future... don't know when :P</b></p>
+        </div>
+    </section>
+
+    <script>
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "windows-phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "ios";
+            }
+
+            return "unknown";
+        }
+        if (getMobileOperatingSystem() == "unknown") {
+            
+        }else{
+            document.getElementById('text1').style = 'top: 18%;'
+            document.getElementById('invert').style = 'top: 55%;'
+            document.getElementById('more').style = 'top: 87%;'
+            document.getElementById('section').style = 'background-color: rgb(74, 73, 100);color: whitesmoke;padding: 10px;text-align: center;padding: 20px;margin:5px;border-radius: 12px;height: 80%;top: 67%;'
+        }
+    </script>
+</body>
+</html>
